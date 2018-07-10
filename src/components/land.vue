@@ -19,19 +19,11 @@ export default {
       webHeight: 0
     }
   },
-  mounted () {
-    window.addEventListener('scroll', this.htmlHeight)
-  },
   methods: {
-    htmlHeight () {
-      this.webWidth = document.body.clientWidth
-      this.webHeight = document.body.clientHeight
-    }
   },
   created () {
     this.webWidth = window.screen.availWidth
     this.webHeight = window.screen.availHeight
-    console.log(window.screen.availHeight)
   }
 }
 </script>
