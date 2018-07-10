@@ -2,9 +2,9 @@
   <el-container class="landBody" :style="{width: webWidth + 'px', height: webHeight + 'px'}">
       <div class="landDiv">
         <div>
-          <p><img src="../assets/img/gh_03.png" alt="" /><span>用户名：</span><input type="" name="username" id="" value="" placeholder="请输入您的用户名" /></p>
-          <p><img src="../assets/img/gh_04.png" alt="" /><span>密   码：</span><input type="" name="pwd" id="" value="" placeholder="请输入您的密码" /></p>
-          <img class="landing" src="../assets/img/gh_05.png" alt=""/>
+          <p><img src="../assets/img/gh_03.png" alt="" /><span>用户名：</span><input v-model="username" type="" name="username" id="" value="" placeholder="请输入您的用户名" /></p>
+          <p><img src="../assets/img/gh_04.png" alt="" /><span>密   码：</span><input v-model="userpwd" type="" name="pwd" id="" value="" placeholder="请输入您的密码" /></p>
+          <img class="landing" src="../assets/img/gh_05.png" alt="" @click="landing"/>
         </div>
       </div>
   </el-container>
@@ -16,10 +16,21 @@ export default {
   data () {
     return {
       webWidth: 0,
-      webHeight: 0
+      webHeight: 0,
+      username: '',
+      userpwd: ''
     }
   },
   methods: {
+    landing () {
+      if (this.username.length === 0) {
+        this.$alert('请输入用户名', '警告', {confirmButtonText: '确定'})
+      } else if (this.userpwd.length === 0) {
+        this.$alert('请输入密码', '警告', {confirmButtonText: '确定'})
+      } else {
+        console.log('登陆成功')
+      }
+    }
   },
   created () {
     this.webWidth = window.screen.availWidth
