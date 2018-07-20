@@ -9,7 +9,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
-// Vue.prototype.URLS = 'http://gh.doudouv.com/'
+// Vue.prototype.URLS = ''
 Vue.prototype.URLS = '/api'
 
 /* eslint-disable no-new */
