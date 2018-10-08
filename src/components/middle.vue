@@ -26,7 +26,7 @@
         </div>
         <div class="gh_ly gh_span gh_rq block">
           <span class="demonstration">查询日期</span>
-          {{value6}}
+          <!--{{value6}}-->
           <el-date-picker
             v-model="value6"
             type="daterange"
@@ -168,13 +168,14 @@ export default{
 </script>
 
 <style scoped>
-.el-date-editor,.el-range-editor,.el-input__inner,.el-date-editor--daterange { width: 218px;}
+.el-date-editor,.el-range-editor,.el-input__inner,.el-date-editor--daterange { width: 300px;}
 .demonstration {font-size: 14px;}
-.el-input { width: 218px;}
+.el-input { width: 300px;}
 .Middle { height: 200px;}
 .Middle h1 { color: #6e6e6e;font-size: 28px; font-weight: normal; width: 100%;}
 .Middle ul { margin: 0; padding: 0 1% 0;}
 .Middle ul li { margin-bottom: 2%; list-style: none; height: 25px;}
+.Middle ul li .el-select{width: 300px;}
 .Middle ul li div.gh_cx { width: 30%;}
 .Middle ul li div.gh_span { margin: 0 1% 0s; float: left;}
 .Middle ul li div.gh_span span { font-size: 14px; float: left; width: 25%; line-height: 40px; color: #333333;}

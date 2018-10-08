@@ -4,7 +4,55 @@
       <h1>*用户管理*</h1>
       <a href=""><img src="../assets/img/gh_20.png"/></a>
     </div>
-    <table>
+    <el-table
+    	highlight-current-row
+	    :data="tableData"
+	    height="250"
+	    style="width: 100%;">
+	    <el-table-column
+	    	align="center"
+	    	type="index"
+	      label="序号"
+	      width="80">
+	    </el-table-column>
+	    <el-table-column
+	    	align="center"
+	    	width="250"
+	      prop="userName"
+	      label="用户名">
+	    </el-table-column>
+	    <el-table-column
+	    	align="center"
+	    	width="250"
+	      prop="itemName"
+	      label="项目名称">
+	    </el-table-column>
+	    <el-table-column
+	    	align="center"
+	    	width="200"
+	      prop="authority"
+	      label="权限">
+	    </el-table-column>
+	    <el-table-column
+	    	align="center"
+	      label="操作">
+	      <template slot-scope="scope">
+	      	<el-switch
+	      		style="margin-right: 10px;"
+            v-model="value1"
+            active-text="启用"
+            inactive-text="禁用"
+            active-color="#13ce66"
+            inactive-color="#13ce66">
+          </el-switch>
+      		<el-button size="mini" plain @click="">修改密码</el-button>
+      		<el-button size="mini" plain @click="">修改项目绑定</el-button>
+      		<el-button size="mini" plain @click="">权限修改</el-button>
+      		<el-button size="mini" type="danger" plain @click="">删除用户</el-button>
+	      </template>
+	    </el-table-column>
+	  </el-table>
+    <!--<table>
       <tr>
         <th class="table_th">序号</th>
         <th class="table_th01">用户名</th>
@@ -52,7 +100,7 @@
           <a href="" class="a2">修改密码</a>
         </td>
       </tr>
-    </table>
+    </table>-->
   </div>
 </template>
 
@@ -62,7 +110,21 @@ export default{
   data () {
     return {
       value1: true,
-      value2: true
+      value2: true,
+      tableData: [
+      	{
+      		id: '1',
+      		userName: 'zyj',
+      		itemName: '大同',
+      		authority: '普通用户'
+      	},
+      	{
+      		id: '2',
+      		userName: 'zyh',
+      		itemName: '上海',
+      		authority: '超级管理员'
+      	},
+      ]
     }
   },
   methods: {

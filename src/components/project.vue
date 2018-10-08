@@ -1,56 +1,55 @@
 <template>
   <div class="projdct">
     <div class="title">
-      <h1>*用户管理*</h1>
+      <h1>*项目管理*</h1>
       <a href=""><img src="../assets/img/gh_20.png"/></a>
     </div>
-    <table>
-      <tr>
-        <th class="table_th">序号</th>
-        <th class="table_th01">项目名称</th>
-        <th class="table_th02">项目状态</th>
-        <th class="table_th03">可接收邮箱</th>
-        <th class="table_th04">操作</th>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>大同</td>
-        <td class="pro_td1">
-          <el-switch
+    <el-table
+    	highlight-current-row
+	    :data="tableData"
+	    height="250"
+	    style="width: 100%;">
+	    <el-table-column
+	    	align="center"
+	    	type="index"
+	      label="序号"
+	      width="80">
+	    </el-table-column>
+	    <el-table-column
+	    	align="center"
+	    	width="250"
+	      prop="itemName"
+	      label="项目名称">
+	    </el-table-column>
+	    <el-table-column
+	    	align="center"
+	    	width="200"
+	      prop="itemState"
+	      label="项目状态">
+	      <template slot-scope="scope">
+	      	<el-switch
             v-model="value1"
-            active-text="启用"
-            inactive-text="禁用"
-            active-color="#13ce66"
-            inactive-color="#13ce66">
+            active-color="#16d068"
+            inactive-color="#fd4949">
           </el-switch>
-        </td>
-        <td>545631684@qq.com</td>
-        <td class="pro_td">
-          <a href="" class="a2">修改项目名称</a>
-          <a href="" class="a3">修改项目接收邮箱</a>
-          <a href="" class="a4">删除项目</a>
-        </td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>大同/大同/大同/大同</td>
-        <td class="pro_td1">
-          <el-switch
-            v-model="value2"
-            active-text="启用"
-            inactive-text="禁用"
-            active-color="#13ce66"
-            inactive-color="#13ce66">
-          </el-switch>
-        </td>
-        <td>545631684@qq.com 545631684@qq.com 545631684@qq.com</td>
-        <td class="pro_td">
-          <a href="" class="a2">修改项目名称</a>
-          <a href="" class="a3">修改项目接收邮箱</a>
-          <a href="" class="a4">删除项目</a>
-        </td>
-      </tr>
-    </table>
+	      </template>
+	    </el-table-column>
+	    <el-table-column
+	    	align="center"
+	    	width="300"
+	      prop="itemMailbox"
+	      label="可接收邮箱">
+	    </el-table-column>
+	    <el-table-column
+	    	align="center"
+	      label="操作">
+	      <template slot-scope="scope">
+      		<el-button size="mini" plain @click="">修改名称</el-button>
+      		<el-button size="mini" plain @click="">修改邮箱</el-button>
+      		<el-button size="mini" type="danger" plain @click="">删除项目</el-button>
+	      </template>
+	    </el-table-column>
+	  </el-table>
   </div>
 </template>
 
@@ -60,7 +59,27 @@ export default{
   data () {
     return {
       value1: true,
-      value2: true
+      value2: true,
+      tableData: [
+      	{
+      		id: '1',
+      		itemName: '大同',
+      		itemState: true,
+      		itemMailbox: '545631684@qq.com'
+      	},
+      	{
+      		id: '1',
+      		itemName: '大同',
+      		itemState: true,
+      		itemMailbox: '545631684@qq.com'
+      	},
+      	{
+      		id: '1',
+      		itemName: '大同',
+      		itemState: true,
+      		itemMailbox: '545631684@qq.com'
+      	}
+      ]
     }
   },
   methods: {

@@ -1,18 +1,22 @@
 <template>
   <el-container>
-    <el-aside :style="{height: height_screen+'px'}">
-      <Left></Left>
+    <el-aside style="height:100vh">
+      <Left :mkall="mkall"></Left>
     </el-aside>
     <el-container>
-    <el-header>
-      <Headers></Headers>
-    </el-header>
-    <el-main>
-      <Middle></Middle>
-      <Project class="yincang"></Project>
-      <Biaodan class="yincang"></Biaodan>
-      <Yonghm class="yincang"></Yonghm>
-    </el-main>
+	    <el-header style="height: 85px;">
+	      <Headers></Headers>
+	    </el-header>
+	    <el-main>
+	    	<!-- 挂号信息 -->
+	      <Middle v-show="mkall.gh"></Middle>
+	    	<!-- 用户管理 -->
+	      <Yonghm v-show="mkall.yh"></Yonghm>
+	    	<!-- 项目管理 -->
+	      <Project v-show="mkall.xm"></Project>
+	    	<!-- 代码生成 -->
+	      <Biaodan v-show="mkall.dm"></Biaodan>
+	    </el-main>
     </el-container>
   </el-container>
 </template>
@@ -28,15 +32,17 @@ export default{
   name: 'backstage',
   data () {
     return {
-      height_screen: 0
+      mkall: {
+      	gh: true,
+      	yh: false,
+      	xm: false,
+      	dm: false
+      }
     }
   },
   methods: {
-    tijiao () {
-    }
   },
   created () {
-    this.height_screen = window.screen.height
   },
   components: {
     Headers,
