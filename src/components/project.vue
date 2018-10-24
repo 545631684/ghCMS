@@ -2,7 +2,7 @@
   <div class="projdct">
     <div class="title">
       <h1>*项目管理*</h1>
-      <a href=""><img src="../assets/img/gh_20.png"/></a>
+      <el-button class="anniu" type="primary" @click="createHtml()">添加项目</el-button>
     </div>
     <el-table
     	highlight-current-row
@@ -93,8 +93,7 @@ export default{
 .projdct {}
 .projdct .title { width: 100%;display: inline-block;}
 .projdct .title h1 {color: #6e6e6e; font-size: 28px; font-weight: normal; width: 200px; float: left;}
-.projdct .title a { width: 8%; float: left; margin-top: 32px;}
-.projdct .title a img { width: 100%;}
+.projdct .title .anniu { float: left; margin-top: 27px;}
 .table_th { width: 5%;}
 .table_th01 { width: 10%;}
 .table_th02 {  width: 17%;}

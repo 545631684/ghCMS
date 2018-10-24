@@ -36,12 +36,12 @@
           </el-date-picker>
         </div>
         <div class="gh_an">
-          <a href=""><img src="../assets/img/gh_14.png"/></a>
-          <a href=""><img src="../assets/img/gh_15.png"/></a>
+        	<el-button class="anniu" type="primary" @click="createHtml()">查询</el-button>
+        	<el-button class="anniu" type="primary" @click="createHtml()">导出数据</el-button>
         </div>
       </li>
     </ul>
-    <el-table :data="tableData5" style="width: 100%">
+    <el-table :data="tableData5" style="width: 100%" highlight-current-row>
       <el-table-column type="expand">
         <template slot-scope="props">
           <el-form label-position="left" inline class="demo-table-expand">
@@ -188,7 +188,7 @@ select{appearance:none;-moz-appearance:none; -webkit-appearance:none;}
 .Middle ul li div.gh_ly input.gh_input {border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border: 1px solid #B6B6B6;height: 25px;width: 68%;}
 .gh_rq {width: 60%;}
 .gh_rq .gh_in { width: 32%;border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;border: 1px solid #B6B6B6;height: 25px;padding: 0 0 0 1%; text-align: center;}
-.gh_an { width: 35%; float: left; margin-left: 2%;padding-top: 8px;}
+.gh_an { width: 35%; float: left; margin-left: 2%;}
 .gh_an a { display: block; width:22%; float: left; margin-right: 3%;}
 .gh_an a img{ width: 100%;display: block;}
 .demo-table-expand {font-size: 0;}
