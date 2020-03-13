@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="foot_info">
-      <a href="http://www.beian.miit.gov.cn/">备案号：晋ICP备17009872号-1</a>
+      <a href="http://www.beian.miit.gov.cn/">备案号：晋ICP备17009872号</a>
       <p>联系邮箱：545631684@qq.com</p>
     </div>    
   </div>
