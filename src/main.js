@@ -12,8 +12,8 @@ Vue.use(Highlight)
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
-// Vue.prototype.URLS = ''
-Vue.prototype.URLS = '/api'
+Vue.prototype.URLS = ''
+// Vue.prototype.URLS = '/api'
 
 /* eslint-disable no-new */
 new Vue({
